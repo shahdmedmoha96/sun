@@ -1,0 +1,151 @@
+.container{
+
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: #272C34;
+    color: #fff;
+    box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    
+   
+}
+.circle{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    z-index: 100;
+    border-radius: 50%;
+  
+}
+.circle::before{
+    content: "";
+    position: absolute;
+    background-color: #272C34;
+    width: 150%;
+    height: 150%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+      animation:  cir ease-in-out 4s infinite;
+      opacity: 1;
+
+}
+.circle_top{
+    height: 124px;
+    background: #7DDFFC;	
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    top:0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  
+   
+}
+
+.circle_bottom{
+   
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: #F0DE75;
+    border-top: 1px solid rgb(140, 140, 140);
+}
+.sun{
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    left: -36px;
+    top:40%;
+    border-radius: 50%;
+    background: #FFEF00;
+    animation: shadsun 4s ease-in-out forwards infinite  ;
+}
+.side_left{
+    
+     position: absolute;
+     bottom: 30%;
+     left: 35px;
+     height: 57px;
+     width: 116px;
+     background: #F4F4F4;
+   clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+}
+
+.side_right{
+
+    position: absolute;
+   bottom: 30%;
+    left: 93px;
+    height: 57px;
+    width: 68px;
+    background: #DDDADA;
+  clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
+}
+.side{
+    height: 80px;
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+     clip-path: polygon(35px 0%,165px 0%, 150% 50%);
+     /* clip-path: polygon(35px 0%,165px 0%, 0% 50%); */
+    animation: shad 4s ease-in-out forwards infinite  ;
+   
+}
+ @keyframes shad{
+0%{
+    clip-path: polygon(35px 0%,165px 0%, 180% 0%);
+}
+20%{
+    clip-path: polygon(35px 0%,165px 0%, 100% 50%);
+}
+70%{
+       clip-path: polygon(35px 0%,165px 0%, 50% 50%);
+}
+100%{
+clip-path: polygon(35px 0%,165px 0%, 0% 0%);
+}
+} 
+@keyframes shadsun{
+    0%{
+        left: -36px;
+    top:40%;
+    }
+    40%{
+        left: 10%;
+    top:10%;
+    }
+    70%{
+        left: 50%;
+        top:5%; 
+    }
+    100%{
+        left: 200%;
+        top:90%; 
+    }
+    } 
+@keyframes cir {
+    0%{
+        opacity: 1;
+    }100%{
+opacity: 0;
+    }
+    
+}
